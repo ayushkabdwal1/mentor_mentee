@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MentorMentee Platform</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      overflow: hidden;
+      background: url('https://mbaworld.in/assets/images/colleges/Galgotias.png') no-repeat center center fixed;
+      background-size: cover;
+      perspective: 1000px;
+    }
+
+    .container {
+      text-align: center;
+      position: relative;
+      height: 100vh;
+      transform-style: preserve-3d;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    /* Add your logo here */
+    .logo {
+  position: absolute;
+  top: 0px;
+  left: 20px;
+  width: 150px; /* Increased width to 150px */
+  filter: drop-shadow(0 0 10px rgba(255,255,255,0.5));
+  animation: logoEntrance 1.5s ease-out;
+}
+    h1 {
+      font-size: 3.5rem;
+      color: white;
+      text-shadow: 3px 3px 10px rgba(0,0,0,0.5);
+      margin-top: 15vh;
+      transform: translateZ(50px);
+      animation: textGlow 2s ease-in-out infinite alternate;
+    }
+
+    .options {
+      margin-top: 8vh;
+      transform: translateZ(30px);
+    }
+
+    .btn {
+      padding: 18px 35px;
+      margin: 20px;
+      font-size: 1.3rem;
+      border: none;
+      border-radius: 15px;
+      cursor: pointer;
+      background: rgba(255,255,255,0.9);
+      color: #007bff;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+      backdrop-filter: blur(5px);
+    }
+
+    .btn:hover {
+      transform: translateY(-7px) scale(1.05);
+      box-shadow: 0 15px 25px rgba(0,0,0,0.4);
+      background: rgba(255,255,255,1);
+    }
+
+    .footer {
+      position: absolute;
+      bottom: 30px;
+      right: 30px;
+      color: black;
+      font-size: 1.1rem;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+      animation: slideInRight 1s ease-out;
+    }
+
+    /* Animations */
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotateX(0deg) rotateY(0deg); }
+      50% { transform: translateY(-20px) rotateX(5deg) rotateY(5deg); }
+    }
+
+    @keyframes textGlow {
+      from { text-shadow: 3px 3px 10px rgba(0,0,0,0.5); }
+      to { text-shadow: 3px 3px 20px rgba(255,255,255,0.3), 3px 3px 30px rgba(255,255,255,0.2); }
+    }
+
+    @keyframes logoEntrance {
+      from { transform: translateX(-100px) rotate(-180deg); opacity: 0; }
+      to { transform: translateX(0) rotate(0deg); opacity: 1; }
+    }
+
+    @keyframes slideInRight {
+      from { transform: translateX(100px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Replace 'your-logo.png' with your actual logo -->
+  <img src="logo1.jpeg" alt="Logo" class="logo">
+
+  <div class="container">
+    <h1>Who are you?</h1>
+    <div class="options">
+      <button class="btn" onclick="window.location.href='mentee-signup.html'">Mentee</button>
+      <button class="btn" onclick="window.location.href='mentor-signup.html'">Mentor</button>
+    </div>
+  </div>
+
+  <div class="footer">
+    Managed by Heart Me Out Team
+  </div>
+</body>
+</html>

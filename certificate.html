@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Certificates</title>
+  <link rel="stylesheet" href="loder.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+    }
+    .navbar {
+      background-color: #333;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    .navbar a:hover {
+      text-decoration: underline;
+    }
+    .container {
+      padding: 20px;
+    }
+    .certificate-list {
+      display: grid;
+      gap: 15px;
+    }
+    .certificate-item {
+      background-color: white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .certificate-item h3 {
+      margin: 0 0 10px;
+      color: #333;
+    }
+    .btn {
+      padding: 8px 16px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .btn:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <div class="navbar">
+    <div>
+      <a href="mentee-dashboard.html">Back to Dashboard</a>
+    </div>
+    <div>
+      <a href="https://github.com" target="_blank">GitHub</a>
+      <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+    </div>
+  </div>
+
+  <!-- Certificate List -->
+  <div class="container">
+    <h2>Certificates</h2>
+    <div class="certificate-list">
+      <div class="certificate-item">
+        <h3>Certificate 1: HTML Basics</h3>
+        <button class="btn">Download</button>
+      </div>
+      <div class="certificate-item">
+        <h3>Certificate 2: CSS Styling</h3>
+        <button class="btn">Download</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

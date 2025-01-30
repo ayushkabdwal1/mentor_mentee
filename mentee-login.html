@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mentee Login</title>
+  <link rel="stylesheet" href="loder.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: url('logo.png')
+    }
+    .form-container {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 300px;
+    }
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+    label {
+      display: block;
+      margin: 10px 0 5px;
+      color: #555;
+    }
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .btn {
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .btn:hover {
+      background-color: #0056b3;
+    }
+    .signup-link {
+      text-align: center;
+      margin-top: 10px;
+    }
+    .signup-link a {
+      color: #007bff;
+      text-decoration: none;
+    }
+    .signup-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Mentee Login</h2>
+    <form id="menteeLoginForm">
+      <label for="email">Email/Phone:</label>
+      <input type="text" id="email" name="email" required>
+      
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+      
+      <button type="submit" class="btn">Login</button>
+    </form>
+    <div class="signup-link">
+      <p>Don't have an account? <a href="mentee-signup.html">Sign Up</a></p>
+    </div>
+  </div>
+  <script>
+    document.getElementById('menteeLoginForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      alert('Login Successful! Redirecting to Dashboard...');
+      window.location.href = 'mentee-dashboard.html';
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mentor Profile</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* mentor.css */
+
+/* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #007bff, #00bfff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.profile-container {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 2rem;
+  max-width: 800px;
+  width: 100%;
+}
+
+.profile-container h1 {
+  font-size: 2rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.profile-content {
+  display: flex;
+  gap: 2rem;
+}
+
+.profile-photo {
+  text-align: center;
+}
+
+.profile-photo img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #007bff;
+  margin-bottom: 1rem;
+}
+
+.profile-photo button {
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.profile-photo button:hover {
+  background-color: #0056b3;
+}
+
+.profile-details {
+  flex: 1;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #007bff;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.btn {
+  padding: 0.8rem 1.5rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .profile-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile-photo {
+    margin-bottom: 2rem;
+  }
+}
+  </style>
+</head>
+<body>
+  <div class="profile-container">
+    <h1>Mentor Profile</h1>
+    <div class="profile-content">
+      <!-- Profile Photo Section -->
+      <div class="profile-photo">
+        <img src="assets/images/default-profile.png" alt="Profile Photo" id="profileImage">
+        <input type="file" id="photoUpload" accept="image/*" style="display: none;">
+        <button class="btn" onclick="document.getElementById('photoUpload').click()">Upload Photo</button>
+      </div>
+
+      <!-- Profile Details Section -->
+      <div class="profile-details">
+        <form id="profileForm">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" value="Dr. Sanjeev Sharma" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" value="sanjeev.sharma@example.com" required>
+          </div>
+          <div class="form-group">
+            <label for="expertise">Expertise</label>
+            <input type="text" id="expertise" name="expertise" value="DBMS, Data Structures" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" value="+91 9876543210" required>
+          </div>
+          <div class="form-group">
+            <label for="bio">Bio</label>
+            <textarea id="bio" name="bio" rows="4">Experienced mentor with 10+ years of teaching expertise in computer science.</textarea>
+          </div>
+          <button type="submit" class="btn">Update Profile</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // mentor.js
+
+// Handle Profile Photo Upload
+document.getElementById('photoUpload').addEventListener('change', function (e) {
+  const file = e.target.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = function (e) {
+      document.getElementById('profileImage').src = e.target.result;
+    };
+    reader.readAsDataURL(file);
+  }
+});
+
+// Handle Profile Form Submission
+document.getElementById('profileForm').addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  // Get form data
+  const formData = {
+    name: document.getElementById('name').value,
+    email: document.getElementById('email').value,
+    expertise: document.getElementById('expertise').value,
+    phone: document.getElementById('phone').value,
+    bio: document.getElementById('bio').value,
+  };
+
+  // Save data (replace with API call)
+  console.log('Updated Profile Data:', formData);
+  alert('Profile Updated Successfully!');
+});
+  </script>
+</body>
+</html>

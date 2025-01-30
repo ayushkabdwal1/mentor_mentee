@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mentors</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+    }
+    .navbar {
+      background-color: #333;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    .navbar a:hover {
+      text-decoration: underline;
+    }
+    .container {
+      padding: 20px;
+    }
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 30px;
+    }
+    .mentor-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+    .mentor-item {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .mentor-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+    .mentor-item img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+      border: 3px solid #007bff;
+    }
+    .mentor-item h3 {
+      margin: 0 0 10px;
+      color: #333;
+    }
+    .mentor-item p {
+      margin: 0;
+      color: #555;
+      font-size: 0.9rem;
+    }
+    .mentor-item .expertise {
+      color: #007bff;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+    .mentor-item .details {
+      margin-top: 15px;
+      font-size: 0.9rem;
+      color: #777;
+    }
+    .mentor-item .contact {
+      margin-top: 15px;
+    }
+    .mentor-item .contact a {
+      color: #007bff;
+      text-decoration: none;
+      margin: 0 5px;
+      font-size: 1.2rem;
+      transition: color 0.3s ease;
+    }
+    .mentor-item .contact a:hover {
+      color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <div class="navbar">
+    <div>
+      <a href="mentee-dashboard.html">Back to Dashboard</a>
+    </div>
+    <div>
+      <a href="https://github.com" target="_blank">GitHub</a>
+      <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+    </div>
+  </div>
+
+  <!-- Mentors List -->
+  <div class="container">
+    <h2>Assigned Mentors</h2>
+    <div class="mentor-list">
+      <!-- Mentor 1 -->
+      <div class="mentor-item">
+        <img src="https://via.placeholder.com/100" alt="Mentor 1">
+        <h3>Dr. Sanjeev Sharma</h3>
+        <p class="expertise">Expertise: DBMS</p>
+        <p class="details">Professor at XYZ University with 10+ years of experience in database management systems.</p>
+        <div class="contact">
+          <a href="mailto:sanjeev.sharma@example.com"><i class="fas fa-envelope"></i></a>
+          <a href="tel:+1234567890"><i class="fas fa-phone"></i></a>
+          <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+
+      <!-- Mentor 2 
+      <div class="mentor-item">
+        <img src="https://via.placeholder.com/100" alt="Mentor 2">
+        <h3>Gaurav Negi</h3>
+        <p class="expertise">Expertise: DBMS</p>
+        <p class="details">Senior Software Engineer with expertise in database design and optimization.</p>
+        <div class="contact">
+          <a href="mailto:gaurav.negi@example.com"><i class="fas fa-envelope"></i></a>
+          <a href="tel:+1234567890"><i class="fas fa-phone"></i></a>
+          <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>-->
+      </div>
+    </div>
+  </div>
+</body>
+</html>

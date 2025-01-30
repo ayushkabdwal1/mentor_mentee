@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mentee Dashboard</title>
+  <style>
+    /* Add the global animations and transitions here */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .fade-in {
+      animation: fadeIn 0.5s ease-in;
+    }
+    @keyframes slideIn {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    .slide-in {
+      animation: slideIn 0.5s ease-out;
+    }
+    .btn-hover {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .btn-hover:hover {
+      transform: scale(1.05);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+    }
+    .navbar {
+      background-color: #333;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    .navbar a:hover {
+      text-decoration: underline;
+    }
+    .slider {
+      background-color: #007bff;
+      color: white;
+      padding: 10px;
+      text-align: center;
+    }
+    .dashboard {
+      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+    }
+    .dashboard-item {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .dashboard-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+    .dashboard-item img {
+      width: 50px;
+      height: 50px;
+      margin-bottom: 10px;
+    }
+    .dashboard-item h3 {
+      margin: 0;
+      color: #333;
+    }
+    .notification-badge {
+      background-color: #ff4757;
+      color: white;
+      border-radius: 50%;
+      padding: 5px 8px;
+      font-size: 12px;
+      position: absolute;
+      top: -10px;
+      right: -10px;
+    }
+    .dashboard-item {
+      position: relative;
+    }
+    .dark-mode {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+.dark-mode .dashboard-item,
+.dark-mode .assignment-item,
+.dark-mode .session-item,
+.dark-mode .mentor-item {
+  background-color: #2d2d2d;
+  color: #ffffff;
+}
+
+.dark-mode .btn {
+  background-color: #4a4a4a;
+}
+  </style>
+  <link rel="stylesheet" href="loder.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <div class="navbar">
+    <div>
+      
+      <!-- Add this button to the navbar -->
+<button class="btn" onclick="toggleDarkMode()">🌓 DARK MODE</button>
+    </div>
+    <div>
+      <a href="https://github.com" target="_blank">GitHub</a>
+      <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+    </div>
+  </div>
+
+  <!-- Slider -->
+  <div class="slider fade-in">
+   
+    <h2>Welcome to Your Dashboard!</h2>
+  </div>
+
+  <!-- Dashboard Sections -->
+  <div class="dashboard">
+    <!-- Profile Management -->
+    <div class="dashboard-item slide-in" onclick="window.location.href='profile.html'">
+      <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Profile">
+      <h3>Profile</h3>
+    </div>
+
+    
+
+    <!-- Mentee Sessions -->
+    <div class="dashboard-item slide-in" onclick="window.location.href='sessions.html'">
+      <img src="https://cdn-icons-png.flaticon.com/512/3595/3595455.png" alt="Sessions">
+      <h3>Sessions</h3>
+      <div class="notification-badge">1</div>
+    </div>
+
+    <!-- Assigned Mentors -->
+    <div class="dashboard-item slide-in" onclick="window.location.href='mentors.html'">
+      <img src="https://cdn-icons-png.flaticon.com/512/1077/1077012.png" alt="Mentors">
+      <h3>Mentors</h3>
+    </div>
+
+
+    <!-- Feedback -->
+    <div class="dashboard-item slide-in" onclick="window.location.href='feedback.html'">
+      <img src="https://cdn-icons-png.flaticon.com/512/2527/2527854.png" alt="Feedback">
+      <h3>Feedback</h3>
+    </div>
+
+    <!-- Session Schedule -->
+    <div class="dashboard-item slide-in" onclick="window.location.href='schedule.html'">
+      <img src="https://cdn-icons-png.flaticon.com/512/3652/3652191.png" alt="Schedule">
+      <h3>Schedule</h3>
+    </div>
+
+    <!-- Complaint/Query Box -->
+    <div class="dashboard-item slide-in" onclick="window.location.href='complaint.html'">
+      <img src="https://cdn-icons-png.flaticon.com/512/1828/1828843.png" alt="Complaint">
+      <h3>Complaint</h3>
+    </div>
+
+    <!-- Certificate Issuance -->
+    <div class="dashboard-item slide-in" onclick="window.location.href='certificate.html'">
+      <img src="https://cdn-icons-png.flaticon.com/512/3062/3062635.png" alt="Certificate">
+      <h3>Certificate</h3>
+    </div>
+    <footer></footer>
+
+
+   
+
+  <script>
+    // Example: Dynamic content for notifications
+    const assignmentsBadge = document.querySelector('.dashboard-item:nth-child(2) .notification-badge');
+    const sessionsBadge = document.querySelector('.dashboard-item:nth-child(3) .notification-badge');
+
+    // Mock data for notifications
+    const notifications = {
+      assignments: 2,
+      sessions: 1,
+    };
+
+    // Update notification badges
+    assignmentsBadge.textContent = notifications.assignments;
+    sessionsBadge.textContent = notifications.sessions;
+  </script>
+  <script src="darkmode.js"></script>
+</body>
+</html>

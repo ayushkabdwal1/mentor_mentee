@@ -1,0 +1,10 @@
+backend/
+├── config/
+│   └── db.js
+├── models/
+│   ├── Mentee.js
+│   └── Mentor.js
+├── routes/
+│   └── menteeRoutes.js
+├── server.js
+└── .env
